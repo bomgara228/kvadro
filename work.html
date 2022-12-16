@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    .red{
+
+        background-color: red;
+    }
+    
+    .block {
+        width: 100px;
+        height: 100px;
+        border: 2px solid grey;
+    }
+    .block1 {
+        width: 200px;
+        height: 200px;
+        border: 2px solid grey;
+        background-color: red;
+    }
+    .block2 {
+        width: 150px;
+        height: 150px;
+        border: 2px solid grey;
+        background-color: red;
+    }
+    .block3 {
+        width: 100px;
+        height: 100px;
+        border: 2px solid grey;
+        background-color: red;
+    }
+    div {
+        width: 100px;
+      /*   height: 100px; */
+        border: 2px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .rotate{
+        transform: rotate(45deg);
+    }
+    .green {
+        background-color: green;
+    }
+    .da {
+        width: 900px;
+        min-height: 200px;
+        border: 2px solid black;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    p {
+        margin: 0 auto;
+        display: inline-block;
+    }
+    .height {
+        height: 100px;
+    }
+    </style>
+</head>
+<body>
+    <!-- 1 -->
+    <!-- <div class="block"></div> -->
+
+    <!-- 2 -->
+    <!-- <div class="block1" id="block1">
+        <div class="block2" id="block2">
+            <div class="block3" id="block3"></div>
+        </div>
+    </div> -->
+
+    <!-- 3 -->
+    <div class="da"></div>
+    <p>Добавить</p>
+    <script>
+        //1
+        /* let el = document.querySelector('.block');
+        el.addEventListener('contextmenu', ot);
+        function ot() {
+            event.preventDefault();
+            event.target.classList.toggle('red');
+        }
+        el.addEventListener('click', function(){
+            event.target.classList.toggle('green');
+        }) */
+
+        //2
+        /* let el1 = document.querySelector('.block1');
+        let el2 = document.querySelector('.block2');
+        let el3 = document.querySelector('.block3');
+
+        function blockAction() {
+            event.target.classList.toggle('green');
+            event.stopPropagation();
+        }
+        function rot() {
+            event.stopPropagation();
+            event.target.classList.toggle('rotate');
+            console.log(event.target)
+     
+            if (event.target.id == 'block1') {
+                el2.classList.toggle('rotate');
+            }
+            if (event.target.id == 'block2') {
+                el3.classList.toggle('rotate');
+            }
+            event.preventDefault();
+        }
+        
+        el1.addEventListener('contextmenu', rot);
+        el2.addEventListener('contextmenu', rot);
+        el3.addEventListener('contextmenu', rot);
+
+        el1.addEventListener('click', blockAction);
+        el2.addEventListener('click', blockAction);
+        el3.addEventListener('click', blockAction); */
+
+        //3
+        let bl = document.querySelector('.da');
+        let but = document.querySelector('p');
+        function soz() {
+            let el = document.createElement('div');
+            el.style.backgroundColor =  `rgb(${getRC()},${getRC()},${getRC()})`;
+            el.classList.add('height');
+            bl.append(el);
+        }
+        function getRC() {
+            return Math.floor(Math.random() * 256);
+        }
+        but.addEventListener('click', soz)
+    </script>
+</body>
+</html>
